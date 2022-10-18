@@ -25,7 +25,7 @@ class BaseStorage(Storage):
     def check_to(self, name: str, amount: int):  # Проверяет на вместимость склад назначения
         if name not in self.__items:
             if self.__max_unique_items:
-                if self.get_unique_items_count >= self.__max_unique_items:
+                if self.__get_unique_items_count >= self.__max_unique_items:
                     raise NotEnoughSpaceError
 
         if self.__capacity - amount < 0:
@@ -45,8 +45,7 @@ class BaseStorage(Storage):
     def get_items(self):
         return self.__items
 
-    @property
-    def get_unique_items_count(self):
+    def __get_unique_items_count(self):
         return len(self.__items)
 
     @property
