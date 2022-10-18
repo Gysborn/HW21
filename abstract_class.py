@@ -28,7 +28,7 @@ class Storage(ABC):
         pass
 
     @abstractmethod
-    def __get_unique_items_count(self):
+    def _get_unique_items_count(self):
         pass
 
     @abstractmethod

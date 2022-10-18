@@ -33,13 +33,13 @@ company = {
     "магазин": shop,
 }
 
-
 def main():
     print("Добрго времени суток")
 
     for storage_name, storage in company.items(): # Выводит содержимое складов
         storage.revision()
         print(f"В {storage_name} храниться:{storage.get_items}")
+        print(f"Свободного места: {storage.get_free_space}")
     while True:
         str_request = input("Введите запрос\nЧтобы закончить введите 's'\n")
         if str_request == 's':
@@ -79,6 +79,7 @@ def main():
 
         for storage_name, storage in company.items():
             print(f"В {storage_name} храниться: {storage.get_items}")
+            print(f"Свободного места: {storage.get_free_space}")
         time.sleep(3)
         continue
 
